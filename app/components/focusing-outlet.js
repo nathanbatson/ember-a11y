@@ -60,8 +60,9 @@ let FocusingOutlet = Ember.Component.extend({
       let pivotHandler = application.get('_stashedHandlerInfos.pivotHandler.handler.routeName');
 
       let outletName = this.get('outletName');
-
-      let currentRoute = get(outletState, `${outletName}.render.name`);
+  
+      // let currentRoute = get(outletState, `${outletName}.render.name`);
+      let currentRoute = get(outletState, `${outletName}.outlets.main.render.name`); // quick hack to demo focus
       if (!currentRoute) {
         return;
       }
